@@ -6,16 +6,26 @@ import tenis from "../assets/tenis.jpg";
 import whey from "../assets/whey.jpg";
 import camiseta from "../assets/camiseta.jpg";
 import notebook from "../assets/notebook.png";
+import oferta from "../assets/oferta relampago.png";
+import Fakeshop from "./Fakeshop";
 
 function FirsSection() {
   return (
     <div className="firstMenu">
-      <h1 style={{ justifyContent: "center" }}>Ofertas do dia</h1>
+      <img
+        src={oferta}
+        alt="texto"
+        style={{
+          paddingTop: "20px",
+          alignContent: "center",
+          justifyContent: "center",
+          textAlign: "center",
+        }}
+      />
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
-          paddingTop: "20px",
         }}
       >
         <CardFirstColums image={tenis} name={"Tenis"} />
@@ -23,6 +33,8 @@ function FirsSection() {
         <CardFirstColums image={camiseta} name={"T-shirts"} />
         <CardFirstColums image={notebook} name={"Notebooks"} />
       </div>
+      <hr style={{ marginTop: "30px" }} />
+      <Fakeshop />
     </div>
   );
 }

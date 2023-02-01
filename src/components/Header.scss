@@ -4,6 +4,15 @@ header {
   background-color: #f5f5f5;
   padding: 20px;
 
+@media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+    @media (max-width: 425px) {
+      padding: 10px;
+    }
+
+
   .logo {
     img {
       width: 80px;
@@ -13,12 +22,23 @@ header {
   nav {
     margin-left: auto;
 
+
+
     ul {
       list-style: none;
       display: flex;
-
+@media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
       li {
         margin-right: 100px;
+
+   
+            @media (max-width: 768px) {
+              margin-right: 0;
+              margin-bottom: 20px;
+            }
 
         a {
           text-decoration: none;
