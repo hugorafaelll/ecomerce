@@ -29,9 +29,9 @@ function FirsSection() {
         }}
       >
         <CardFirstColums image={tenis} name={"Tenis"} />
-        <CardFirstColums image={whey} name={"Suplementos"} />
-        <CardFirstColums image={camiseta} name={"T-shirts"} />
-        <CardFirstColums image={notebook} name={"Notebooks"} />
+        <CardFirstColums image={camiseta} name={"Roupas"} />
+        <CardFirstColums image={notebook} name={"Tecnologia"} />
+        <CardFirstColums image={whey} name={"Outros"} />
       </div>
       <hr style={{ marginTop: "30px" }} />
       <Fakeshop />
