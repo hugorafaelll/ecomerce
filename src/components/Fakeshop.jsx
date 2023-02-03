@@ -24,10 +24,7 @@ const Fakeshop = () => {
   return (
     <div className="card">
       {products.map((product) => (
-        <Card sx={{ maxWidth: 345 }}>
-          <Typography gutterBottom variant="h5" component="div">
-            {product.title}
-          </Typography>
+        <Card sx={{ maxWidth: 345 }} className="produtos">
           <CardMedia
             component="img"
             alt={product.description}
