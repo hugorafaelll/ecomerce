@@ -13,7 +13,7 @@ const Fakeshop = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.escuelajs.co/api/v1/products")
+      .get("https://dummyjson.com/products")
       .then((res) => {
         console.log(res.data);
         setProducts(res.data);
@@ -23,24 +23,24 @@ const Fakeshop = () => {
 
   return (
     <div className="card">
-      {products.map((product) => (
+      {products.map((item) => (
         <Card sx={{ maxWidth: 345 }} className="produtos">
           <CardMedia
             component="img"
-            alt={product.description}
+            alt={item.brand}
             height="auto"
-            src={product.images[0]}
+            src={item.images[0]}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {product.title}
+              {item.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {product.description}
+              {item.description}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small">Price: {product.price}</Button>
+            <Button size="small">Price: {item.price}</Button>
           </CardActions>
         </Card>
       ))}
