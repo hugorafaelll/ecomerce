@@ -4,6 +4,7 @@ import { Container } from "@material-ui/core";
 import Exemplo from "./components/Exemplo";
 import CardPadrao from "./components/CardFirstColums";
 import FirsSection from "./components/FirsSection";
+import "./App.css";
 
 const App = () => {
   return (
