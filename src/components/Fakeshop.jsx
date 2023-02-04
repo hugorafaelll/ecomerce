@@ -7,13 +7,16 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "../components/fakeShop.scss";
+import Rating from "@mui/material/Rating";
 
 const Fakeshop = () => {
   const [products, setProducts] = useState([]);
 
+  const url = "https://api.escuelajs.co/api/v1/products";
+
   useEffect(() => {
     axios
-      .get("https://dummyjson.com/products")
+      .get(url)
       .then((res) => {
         console.log(res.data);
         setProducts(res.data);
@@ -24,23 +27,32 @@ const Fakeshop = () => {
   return (
     <div className="card">
       {products.map((item) => (
-        <Card sx={{ maxWidth: 345 }} className="produtos">
+        <Card sx={{ maxWidth: 345, padding: "10px" }} className="produtos">
           <CardMedia
             component="img"
             alt={item.brand}
             height="auto"
             src={item.images[0]}
           />
+          <hr />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {item.title}
+            </Typography>
+            <Typography component="legend">
+              <Rating name="read-only" value={4} readOnly />
+            </Typography>
+            <Typography component="legend" variant="h6">
+              Frete Grátis
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {item.description}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small">Price: {item.price}</Button>
+            <Button size="large" align="right">
+              R$ {item.price}
+            </Button>
           </CardActions>
         </Card>
       ))}

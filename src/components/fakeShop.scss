@@ -5,7 +5,12 @@
     justify-content: center;
     align-items: flex-start;
     margin-top: 45px;
+    border-radius: 10px;
 
+    .imagen{
+        border-radius: 10px;
+        cursor: pointer;
+    }
 
 
 
@@ -13,5 +18,7 @@
     .produtos{
         margin-top: 35px;
         margin-left: 40px;
+        border-radius: 10px;
+            cursor: pointer;
     }
 }
