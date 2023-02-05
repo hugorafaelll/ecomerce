@@ -8,6 +8,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "../components/fakeShop.scss";
 import Rating from "@mui/material/Rating";
+import Fab from "@mui/material/Fab";
+import Favorite from "@material-ui/icons/Favorite";
+import Add from "@material-ui/icons/Add";
+import Edit from "@material-ui/icons/Edit";
 
 const Fakeshop = () => {
   const [products, setProducts] = useState([]);
@@ -33,7 +37,20 @@ const Fakeshop = () => {
             alt={item.brand}
             height="auto"
             src={item.images[0]}
+            style={{ position: "relative", zIndex: 0 }}
           />
+          <Fab
+            aria-label="like"
+            size="small"
+            style={{
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              zIndex: -1,
+            }}
+          >
+            <Favorite />
+          </Fab>
           <hr />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
