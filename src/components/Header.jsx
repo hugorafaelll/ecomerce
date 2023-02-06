@@ -3,6 +3,7 @@ import Logo from "../assets/logo.png";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
@@ -11,6 +12,7 @@ const Header = () => {
         <img src={Logo} alt="Logo do site" />
       </div>
       <nav>
+        <SearchBar />
         <ul>
           <li>
             <Link to="/">Home</Link>

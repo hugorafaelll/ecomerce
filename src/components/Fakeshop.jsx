@@ -10,8 +10,6 @@ import "../components/fakeShop.scss";
 import Rating from "@mui/material/Rating";
 import Fab from "@mui/material/Fab";
 import Favorite from "@material-ui/icons/Favorite";
-import Add from "@material-ui/icons/Add";
-import Edit from "@material-ui/icons/Edit";
 
 const Fakeshop = () => {
   const [products, setProducts] = useState([]);
@@ -42,11 +40,13 @@ const Fakeshop = () => {
           <Fab
             aria-label="like"
             size="small"
+            className="fab-icon"
             style={{
-              position: "absolute",
-              top: "10px",
-              right: "10px",
-              zIndex: -1,
+              position: "relative",
+              zIndex: 1,
+              bottom: "248px",
+              left: "295px",
+              opacity: "0.3",
             }}
           >
             <Favorite />
