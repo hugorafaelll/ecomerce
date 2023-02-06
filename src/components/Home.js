@@ -6,10 +6,7 @@ import { BsCart } from "react-icons/bs";
 
 export default function Home() {
   return (
-    <header style={{ backgroundColor: "rgba(255, 255, 255, 0.8)" }}>
-      <div className="logo">
-        <img src={Logo} alt="Logo do site" />
-      </div>
+    <header>
       <nav>
         <ul>
           <li>

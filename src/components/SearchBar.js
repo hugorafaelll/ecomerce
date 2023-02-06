@@ -13,6 +13,9 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import Logo from "../assets/logo.png";
+import Home from "./Home";
+import { Link } from "react-router-dom";
+import { BsCart } from "react-icons/bs";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -158,24 +161,26 @@ export default function SearchBar() {
         <div className="logo">
           <img src={Logo} alt="Logo do site" style={{ width: "80px" }} />
         </div>
-        <Search>
+        <Search style={{ width: "700px" }}>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
           <StyledInputBase
-            placeholder="Search…"
+            placeholder="Buscar produtos ... "
             inputProps={{ "aria-label": "search" }}
           />
         </Search>
+        <></>
         <Box sx={{ flexGrow: 1 }} />
+
         <Box sx={{ display: { xs: "none", md: "flex" } }}>
           <IconButton
             size="large"
             aria-label="show 4 new mails"
             color="inherit"
           >
-            <Badge badgeContent={12} color="error">
-              <MailIcon />
+            <Badge badgeContent={2} color="error">
+              <BsCart style={{ fontSize: "30px" }} />
             </Badge>
           </IconButton>
           <IconButton

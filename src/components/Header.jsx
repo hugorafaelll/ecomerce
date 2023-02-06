@@ -9,7 +9,6 @@ import Home from "./Home";
 const Header = () => {
   return (
     <>
-      <Home />
       <SearchBar />
     </>
   );
