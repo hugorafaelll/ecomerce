@@ -8,7 +8,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <Container>
+    <Container maxWidth="xl">
       <Router>
         <Header />
       </Router>
