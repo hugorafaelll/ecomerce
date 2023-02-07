@@ -16,7 +16,8 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: "1200px",
+  height: "800px",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -38,13 +39,25 @@ export default function BasicModal({ item, setSelectedProduct }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Card sx={{ maxWidth: 600, padding: "10px" }}>
+          <Card
+            sx={{
+              maxWidth: "1800px",
+              padding: "10px",
+              width: " 800px",
+              height: "600px",
+            }}
+          >
             <CardMedia
               component="img"
               alt="descrição da imagen"
               height="auto"
               src={generic}
-              sx={{ position: "relative", zIndex: 0 }}
+              sx={{
+                position: "relative",
+                zIndex: 0,
+                width: "800px",
+                height: "600px",
+              }}
             />
           </Card>
           <Typography id="modal-modal-title" variant="h6" component="h2">
