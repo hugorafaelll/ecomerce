@@ -9,8 +9,9 @@ import generic from "../assets/generic.png";
 import Grid from "@material-ui/core/Grid";
 import Rating from "@mui/material/Rating";
 import { BsCart2 } from "react-icons/bs";
+import { ImTruck } from "react-icons/im";
 import AmountInput from "./AmountInput";
-
+import Exemplo from "./Exemplo";
 // yarn add @emotion/react @emotion/styled  @mui/material
 
 const style = {
@@ -19,14 +20,14 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "1300px",
-  height: "900px",
+  height: "620px",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
 
-export default function BasicModal({ item, setSelectedProduct }) {
+export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -45,7 +46,6 @@ export default function BasicModal({ item, setSelectedProduct }) {
             <Grid item xs={8}>
               <Card
                 sx={{
-                  maxWidth: "1800px",
                   padding: "10px",
                   width: " 800px",
                   height: "600px",
@@ -69,14 +69,27 @@ export default function BasicModal({ item, setSelectedProduct }) {
               <Typography id="modal-modal-title" variant="h2" component="h2">
                 Title
               </Typography>
-              <Rating name="read-only" value={4} sx={{ mb: 10 }} />
-              <Typography id="modal-modal-description" sx={{ mb: 20 }}>
+              <Rating name="read-only" value={4} sx={{ mb: 3 }} />
+              <Typography id="modal-modal-description" sx={{ mb: 10 }}>
                 Description Description Description Description Description
                 Description Description Description Description Description
                 Description Description Description Description Description
                 Description Description Description Description Description
               </Typography>
+              <Typography
+                color="green"
+                variant="h6"
+                sx={[
+                  Typography && {
+                    "&:hover": { color: "blue" },
+                    my: 4,
+                  },
+                ]}
+              >
+                <ImTruck /> Frete Gratis
+              </Typography>
               <AmountInput />
+
               <Typography color="text.secondary" variant="h5" sx={{ my: 5 }}>
                 R$ : 199,36
               </Typography>
