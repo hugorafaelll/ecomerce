@@ -10,12 +10,10 @@ import "../components/fakeShop.scss";
 import Rating from "@mui/material/Rating";
 import Fab from "@mui/material/Fab";
 import Favorite from "@material-ui/icons/Favorite";
-import ModalStandart from "./Modal";
+import BasicModal from "./BasicModal";
 
 const Fakeshop = () => {
   const [products, setProducts] = useState([]);
-  const [openModal, setOpenModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState({});
 
   const url = "https://api.escuelajs.co/api/v1/products";
 
@@ -28,15 +26,6 @@ const Fakeshop = () => {
       })
       .catch((error) => console.error(error));
   }, []);
-
-  const handleOpenModal = (product) => {
-    setOpenModal(true);
-    setSelectedProduct(product);
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
-  };
 
   return (
     <div className="card">
@@ -86,11 +75,8 @@ const Fakeshop = () => {
             <Button size="large" align="right">
               R$ {item.price}
             </Button>
+            <BasicModal />
           </CardActions>
-          <Button
-            variant="outlined"
-            onClick={() => handleOpenModal(item)}
-          ></Button>
         </Card>
       ))}
     </div>
