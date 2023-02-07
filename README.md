@@ -17,7 +17,11 @@ produzido ate : 07/02/2023
   - Melhorar o design do primeiro componente apos o carrosel 
   - Criar um footer 
 
-
+- MongoDb
+  - Criar a propria base de dados, para praticar 
+  
+ - Reduz 
+   - Criar as funções e sistema para fazer o ecomerce funcionar  
 
 
 ### Observações :
