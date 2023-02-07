@@ -9,6 +9,7 @@ import generic from "../assets/generic.png";
 import Grid from "@material-ui/core/Grid";
 import Rating from "@mui/material/Rating";
 import { BsCart2 } from "react-icons/bs";
+import AmountInput from "./AmountInput";
 
 // yarn add @emotion/react @emotion/styled  @mui/material
 
@@ -75,11 +76,8 @@ export default function BasicModal({ item, setSelectedProduct }) {
                 Description Description Description Description Description
                 Description Description Description Description Description
               </Typography>
-              <Typography
-                color="text.secondary"
-                variant="h5"
-                sx={{ marginBottom: "35px" }}
-              >
+              <AmountInput />
+              <Typography color="text.secondary" variant="h5" sx={{ my: 5 }}>
                 R$ : 199,36
               </Typography>
               <Button
@@ -90,11 +88,12 @@ export default function BasicModal({ item, setSelectedProduct }) {
                   Button && {
                     "&:hover": { backgroundColor: "yellow" },
                     border: "1px solid black",
-                    mr: 5,
+                    mr: 3,
                   },
                 ]}
               >
-                <BsCart2 sx /> Adicionar Ao Carrinho
+                <BsCart2 style={{ fontSize: "1.30rem", paddingRight: "8px" }} />{" "}
+                Adicionar Ao Carrinho
               </Button>
               <Button
                 color="primary"
