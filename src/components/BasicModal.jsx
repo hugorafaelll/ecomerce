@@ -3,6 +3,11 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import generic from "../assets/generic.png";
 
 // yarn add @emotion/react @emotion/styled  @mui/material
 
@@ -18,7 +23,7 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal() {
+export default function BasicModal({ item, setSelectedProduct }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -33,6 +38,15 @@ export default function BasicModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <Card sx={{ maxWidth: 600, padding: "10px" }}>
+            <CardMedia
+              component="img"
+              alt="descrição da imagen"
+              height="auto"
+              src={generic}
+              sx={{ position: "relative", zIndex: 0 }}
+            />
+          </Card>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Text in a modal
           </Typography>

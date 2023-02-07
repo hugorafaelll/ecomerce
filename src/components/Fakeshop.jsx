@@ -14,7 +14,7 @@ import BasicModal from "./BasicModal";
 
 const Fakeshop = () => {
   const [products, setProducts] = useState([]);
-
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const url = "https://api.escuelajs.co/api/v1/products";
 
   useEffect(() => {
@@ -26,6 +26,14 @@ const Fakeshop = () => {
       })
       .catch((error) => console.error(error));
   }, []);
+
+  const openModal = (item) => {
+    setSelectedProduct(item);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
 
   return (
     <div className="card">
@@ -40,13 +48,13 @@ const Fakeshop = () => {
             alt={item.brand}
             height="auto"
             src={item.images[0]}
-            style={{ position: "relative", zIndex: 0 }}
+            sx={{ position: "relative", zIndex: 0 }}
           />
           <Fab
             aria-label="like"
             size="small"
             className="fab-icon"
-            style={{
+            sx={{
               position: "relative",
               zIndex: 1,
               bottom: "248px",
@@ -75,6 +83,7 @@ const Fakeshop = () => {
             <Button size="large" align="right">
               R$ {item.price}
             </Button>
+
             <BasicModal />
           </CardActions>
         </Card>
