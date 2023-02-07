@@ -4,10 +4,11 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import generic from "../assets/generic.png";
+import Grid from "@material-ui/core/Grid";
+import Rating from "@mui/material/Rating";
+import { BsCart2 } from "react-icons/bs";
 
 // yarn add @emotion/react @emotion/styled  @mui/material
 
@@ -16,8 +17,8 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "1200px",
-  height: "800px",
+  width: "1300px",
+  height: "900px",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -39,33 +40,77 @@ export default function BasicModal({ item, setSelectedProduct }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Card
-            sx={{
-              maxWidth: "1800px",
-              padding: "10px",
-              width: " 800px",
-              height: "600px",
-            }}
-          >
-            <CardMedia
-              component="img"
-              alt="descrição da imagen"
-              height="auto"
-              src={generic}
-              sx={{
-                position: "relative",
-                zIndex: 0,
-                width: "800px",
-                height: "600px",
-              }}
-            />
-          </Card>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <Grid container>
+            <Grid item xs={8}>
+              <Card
+                sx={{
+                  maxWidth: "1800px",
+                  padding: "10px",
+                  width: " 800px",
+                  height: "600px",
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  alt="descrição da imagen"
+                  height="auto"
+                  src={generic}
+                  sx={{
+                    position: "relative",
+                    zIndex: 0,
+                    width: "800px",
+                    height: "600px",
+                  }}
+                />
+              </Card>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography id="modal-modal-title" variant="h2" component="h2">
+                Title
+              </Typography>
+              <Rating name="read-only" value={4} sx={{ mb: 10 }} />
+              <Typography id="modal-modal-description" sx={{ mb: 20 }}>
+                Description Description Description Description Description
+                Description Description Description Description Description
+                Description Description Description Description Description
+                Description Description Description Description Description
+              </Typography>
+              <Typography
+                color="text.secondary"
+                variant="h5"
+                sx={{ marginBottom: "35px" }}
+              >
+                R$ : 199,36
+              </Typography>
+              <Button
+                color="primary"
+                size="large"
+                variant="filled"
+                sx={[
+                  Button && {
+                    "&:hover": { backgroundColor: "yellow" },
+                    border: "1px solid black",
+                    mr: 5,
+                  },
+                ]}
+              >
+                <BsCart2 sx /> Adicionar Ao Carrinho
+              </Button>
+              <Button
+                color="primary"
+                size="large"
+                variant="filled"
+                sx={[
+                  Button && {
+                    "&:hover": { backgroundColor: "yellow" },
+                    border: "1px solid black",
+                  },
+                ]}
+              >
+                Comprar Agora
+              </Button>
+            </Grid>
+          </Grid>
         </Box>
       </Modal>
     </div>
