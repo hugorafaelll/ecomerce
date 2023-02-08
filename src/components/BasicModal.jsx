@@ -5,13 +5,11 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
-import generic from "../assets/generic.png";
 import Grid from "@material-ui/core/Grid";
 import Rating from "@mui/material/Rating";
 import { BsCart2 } from "react-icons/bs";
 import { ImTruck } from "react-icons/im";
 import AmountInput from "./AmountInput";
-import Exemplo from "./Exemplo";
 // yarn add @emotion/react @emotion/styled  @mui/material
 
 const style = {
@@ -27,14 +25,19 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal() {
+export default function BasicModal({
+  item,
+  openModal,
+  closeModal,
+  selectedProduct,
+}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button onClick={handleOpen}> RS: {item.price}</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -55,7 +58,7 @@ export default function BasicModal() {
                   component="img"
                   alt="descrição da imagen"
                   height="auto"
-                  src={generic}
+                  src={item.images[0]}
                   sx={{
                     position: "relative",
                     zIndex: 0,
@@ -67,14 +70,11 @@ export default function BasicModal() {
             </Grid>
             <Grid item xs={4}>
               <Typography id="modal-modal-title" variant="h2" component="h2">
-                Title
+                {item.title}
               </Typography>
               <Rating name="read-only" value={4} sx={{ mb: 3 }} />
               <Typography id="modal-modal-description" sx={{ mb: 10 }}>
-                Description Description Description Description Description
-                Description Description Description Description Description
-                Description Description Description Description Description
-                Description Description Description Description Description
+                {item.description}
               </Typography>
               <Typography
                 color="green"
@@ -91,7 +91,7 @@ export default function BasicModal() {
               <AmountInput />
 
               <Typography color="text.secondary" variant="h5" sx={{ my: 5 }}>
-                R$ : 199,36
+                R$ : {item.price}
               </Typography>
               <Button
                 color="primary"

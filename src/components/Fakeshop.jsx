@@ -48,7 +48,8 @@ const Fakeshop = () => {
             alt={item.brand}
             height="auto"
             src={item.images[0]}
-            sx={{ position: "relative", zIndex: 0 }}
+            sx={{ position: "relative", zIndex: 0, cursor: "pointer" }}
+            onClick={() => openModal(item)}
           />
           <Fab
             aria-label="like"
@@ -80,11 +81,12 @@ const Fakeshop = () => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="large" align="right">
-              R$ {item.price}
-            </Button>
-
-            <BasicModal />
+            <BasicModal
+              item={item}
+              openModal={() => openModal(item)}
+              closeModal={closeModal}
+              selectedProduct={selectedProduct}
+            />
           </CardActions>
         </Card>
       ))}
