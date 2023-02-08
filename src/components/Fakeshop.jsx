@@ -48,7 +48,7 @@ const Fakeshop = () => {
             alt={item.brand}
             height="auto"
             src={item.images[0]}
-            sx={{ position: "relative", zIndex: 0, cursor: "pointer" }}
+            sx={{ position: "relative", zIndex: 0 }}
             onClick={() => openModal(item)}
           />
           <Fab
