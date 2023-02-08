@@ -3,7 +3,7 @@
 produzido ate : 07/02/2023
 - https://silver-cat-843499.netlify.app/
 
-[![Video Apresentação](https://github.com/hugorafaelll/ecomerce/blob/master/src/assets/linkedim.mp4)](https://github.com/hugorafaelll/ecomerce/blob/master/src/assets/linkedim.mp4)
+
 
 ## Proximas mudanças 
 - MODAL
