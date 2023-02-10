@@ -1,0 +1,32 @@
+{
+    "loja": [
+        {
+            "id" : 1,
+            "marca":"nike",
+            "title": "Air Max - 1",
+            " description" :" Baners e Logos para sites",
+            "image": "https://thecurbsiders.com/wp-content/uploads/2020/05/placeholder-800x600-1.png",
+           "rating": {"rate":3.9, "count":120} ,
+           "price":235.50
+        },   
+         {
+            "id" : 2,
+            "marca":"nike",
+            "title": "Air Max - 2",
+            " description" :" tenis 2",
+            "image": "https://imgnike-a.akamaihd.net/1920x1920/0252311E.jpg",
+            "rating": {"rate":2.9, "count":110} ,
+           "price":235.50
+        },
+          {
+            "id" : 3,
+            "marca":"Adidas",
+            "title": "Air Max - 3",
+            " description" :" tenis 3",
+            "image": "https://imgnike-a.akamaihd.net/1920x1920/022118IE.jpg",
+            "rating": {"rate":1.9, "count":10} ,
+           "price":450
+        }       
+      
+    ]
+}

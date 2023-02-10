@@ -11,11 +11,13 @@ import Rating from "@mui/material/Rating";
 import Fab from "@mui/material/Fab";
 import Favorite from "@material-ui/icons/Favorite";
 import BasicModal from "./BasicModal";
+import Data from "../data/dados.json";
 
-const Fakeshop = () => {
+const Fakeshop = ({ loja }) => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const url = "https://api.escuelajs.co/api/v1/products";
+
+  const url = "https://fakestoreapi.com/products";
 
   useEffect(() => {
     axios
@@ -45,10 +47,11 @@ const Fakeshop = () => {
         >
           <CardMedia
             component="img"
-            alt={item.brand}
+            alt={item.title}
             height="auto"
-            src={item.images[0]}
-            sx={{ position: "relative", zIndex: 0 }}
+            src={item.image}
+            sx={{ position: "relative", zIndex: 0, height: 300 }}
+            style={{ objectFit: "contain" }}
             onClick={() => openModal(item)}
           />
           <Fab
@@ -68,16 +71,15 @@ const Fakeshop = () => {
           <hr />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {item.title}
+              {item.title.length > 30
+                ? item.title.substr(0, 30).concat("  ...")
+                : item.title}
             </Typography>
             <Typography component="legend">
-              <Rating name="read-only" value={4} readOnly />
+              <Rating name="read-only" value={item.rating.rate} readOnly />
             </Typography>
             <Typography component="legend" variant="h6">
               Frete Grátis
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {item.description}
             </Typography>
           </CardContent>
           <CardActions>

@@ -10,7 +10,6 @@ import Rating from "@mui/material/Rating";
 import { BsCart2 } from "react-icons/bs";
 import { ImTruck } from "react-icons/im";
 import AmountInput from "./AmountInput";
-// yarn add @emotion/react @emotion/styled  @mui/material
 
 const style = {
   position: "absolute",
@@ -58,22 +57,38 @@ export default function BasicModal({
                   component="img"
                   alt="descrição da imagen"
                   height="auto"
-                  src={item.images[0]}
+                  src={item.image}
                   sx={{
                     position: "relative",
                     zIndex: 0,
-                    width: "800px",
-                    height: "600px",
+                    width: 800,
+                    height: 600,
                   }}
+                  style={{ objectFit: "contain" }}
                 />
               </Card>
             </Grid>
             <Grid item xs={4}>
-              <Typography id="modal-modal-title" variant="h2" component="h2">
+              <Typography id="modal-modal-title" variant="h4" component="h2">
                 {item.title}
               </Typography>
-              <Rating name="read-only" value={4} sx={{ mb: 3 }} />
-              <Typography id="modal-modal-description" sx={{ mb: 10 }}>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Rating
+                  name="read-only"
+                  value={item.rating.rate}
+                  sx={{ mb: 3 }}
+                />
+                <Typography id="modal-modal-title" variant="subtitle1">
+                  Avaliaçoes : {item.rating.count}
+                </Typography>
+              </div>
+              <Typography id="modal-modal-description">
                 {item.description}
               </Typography>
               <Typography
@@ -89,7 +104,6 @@ export default function BasicModal({
                 <ImTruck /> Frete Gratis
               </Typography>
               <AmountInput />
-
               <Typography color="text.secondary" variant="h5" sx={{ my: 5 }}>
                 R$ : {item.price}
               </Typography>
@@ -105,7 +119,7 @@ export default function BasicModal({
                   },
                 ]}
               >
-                <BsCart2 style={{ fontSize: "1.30rem", paddingRight: "8px" }} />{" "}
+                <BsCart2 style={{ fontSize: "1.30rem", paddingRight: "8px" }} />
                 Adicionar Ao Carrinho
               </Button>
               <Button
