@@ -61,7 +61,7 @@ const Fakeshop = ({ loja }) => {
             sx={{
               position: "relative",
               zIndex: 1,
-              bottom: "248px",
+              bottom: "302px",
               left: "295px",
               opacity: "0.3",
             }}

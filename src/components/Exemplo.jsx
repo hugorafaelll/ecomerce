@@ -10,10 +10,12 @@ import teste5 from "../assets/banner4.png";
 import teste6 from "../assets/banner5.png";
 
 const sliderSettings = {
-  dots: true,
-  infinite: true,
+  dots: "true",
+  infinite: "true",
   speed: 500,
   slidesToShow: 1,
+  autoplay: "true",
+  autoplaySpeed: 2000,
   slidesToScroll: 1,
 };
 
