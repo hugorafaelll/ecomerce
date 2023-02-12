@@ -1,0 +1,47 @@
+Provider vai fornecer o contexto para aplicação
+
+<Provider store={store} >  //argumento para acessar os valores do estado
+	<App />
+<Provider />
+
+
+export default connect (maoStateToProps)(App) : função  high order component => pega um componente baseado em um parametro e retorna outro parametro 
+
+
+
+high order component e quando um componente exporta parametros para outros componentes, com entrada das functions componentes e  com isso os hooks este tipo de função ja nao e mais comunmmente utilizada porem ainda e utilizada em reducer para passar argumentos de um componente para outro componente 
+
+
+
+
+
+OLD SCHOOL 
+
+
+const mapStateToProps = (state) =>{              // dispara um state 
+return{
+		altera os valores de do componente selecionado  
+
+	}
+
+};
+
+const mapDispatchToProps = (dispatch) => {      // dispara uma ação 
+	return{
+			increment : () =>  dispatch ({type:"count/increment" } ;   // transforma uma action em uma props de um componente 
+
+
+
+export default connect (mapStateToProps, mapDispatchToProps ) (App) ;
+
+redux dev tools faz o debug da aplicação 
+para isto tem q colocar no store a propriedade que faz com que abra a extensao no croe window.__redux ...
+
+
+
+payload = valor que vai ser alterado 
+
+
+
+useSelector () = hook de tdo que aconteceu acima  seleciona o state para ser mudado 
+useDispatch() = dispara ação do state acima 
