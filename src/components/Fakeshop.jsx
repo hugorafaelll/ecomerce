@@ -41,7 +41,7 @@ const Fakeshop = ({ loja }) => {
     <div className="card">
       {products.map((item) => (
         <Card
-          sx={{ maxWidth: 345, padding: "10px" }}
+          sx={{ maxWidth: 500, padding: "10px" }}
           key={item.id}
           className="produtos"
         >
@@ -50,7 +50,7 @@ const Fakeshop = ({ loja }) => {
             alt={item.title}
             height="auto"
             src={item.image}
-            sx={{ position: "relative", zIndex: 0, height: 300 }}
+            sx={{ position: "relative", zIndex: 0, height: 400, width: 400 }}
             style={{ objectFit: "contain" }}
             onClick={() => openModal(item)}
           />
@@ -61,8 +61,8 @@ const Fakeshop = ({ loja }) => {
             sx={{
               position: "relative",
               zIndex: 1,
-              bottom: "302px",
-              left: "295px",
+              bottom: "400px",
+              left: "360px",
               opacity: "0.3",
             }}
           >
@@ -71,14 +71,14 @@ const Fakeshop = ({ loja }) => {
           <hr />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {item.title.length > 30
-                ? item.title.substr(0, 30).concat("  ...")
+              {item.title.length > 20
+                ? item.title.substr(0, 20).concat("  ...")
                 : item.title}
             </Typography>
             <Typography component="legend">
               <Rating name="read-only" value={item.rating.rate} readOnly />
             </Typography>
-            <Typography component="legend" variant="h6">
+            <Typography component="legend" variant="subtitle1">
               Frete Grátis
             </Typography>
           </CardContent>

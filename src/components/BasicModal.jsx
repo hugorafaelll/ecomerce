@@ -36,7 +36,7 @@ export default function BasicModal({
 
   return (
     <div>
-      <Button onClick={handleOpen}> RS: {item.price}</Button>
+      <Button onClick={handleOpen}>RS: {item.price}</Button>
       <Modal
         open={open}
         onClose={handleClose}
