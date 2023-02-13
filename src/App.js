@@ -1,7 +1,7 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header";
 import { Container } from "@material-ui/core";
-import Exemplo from "./components/Exemplo";
+import Carrosel from "./components/Carrosel";
 import FirsSection from "./components/FirsSection";
 
 import "./App.css";
@@ -13,7 +13,7 @@ const App = () => {
         <Header />
       </Router>
 
-      <Exemplo />
+      <Carrosel />
       <FirsSection />
     </Container>
   );

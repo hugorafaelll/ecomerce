@@ -29,10 +29,10 @@ const Slider = () => (
   </SlickSlider>
 );
 
-const Exemplo = () => (
+const Carrosel = () => (
   <div>
     <Slider />
   </div>
 );
 
-export default Exemplo;
+export default Carrosel;

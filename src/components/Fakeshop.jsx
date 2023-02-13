@@ -11,7 +11,6 @@ import Rating from "@mui/material/Rating";
 import Fab from "@mui/material/Fab";
 import Favorite from "@material-ui/icons/Favorite";
 import BasicModal from "./BasicModal";
-import Data from "../data/dados.json";
 
 const Fakeshop = ({ loja }) => {
   const [products, setProducts] = useState([]);
