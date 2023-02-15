@@ -40,6 +40,9 @@ para isto tem q colocar no store a propriedade que faz com que abra a extensao n
 
 
 payload = valor que vai ser alterado 
+actions : 
+reducer :
+
 
 
 

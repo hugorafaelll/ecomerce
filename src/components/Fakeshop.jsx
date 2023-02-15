@@ -12,9 +12,14 @@ import Fab from "@mui/material/Fab";
 import Favorite from "@material-ui/icons/Favorite";
 import BasicModal from "./BasicModal";
 
+//redux
+import { add, remove } from "../redux/cartSlice.js";
+import { useDispatch } from "react-redux";
+
 const Fakeshop = ({ loja }) => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const dispatch = useDispatch();
 
   const url = "https://fakestoreapi.com/products";
 
@@ -34,6 +39,10 @@ const Fakeshop = ({ loja }) => {
 
   const closeModal = () => {
     setSelectedProduct(null);
+  };
+
+  const handleAdd = (item) => {
+    dispatch(add(item));
   };
 
   return (
