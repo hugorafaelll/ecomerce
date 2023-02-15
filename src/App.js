@@ -4,18 +4,24 @@ import { Container } from "@material-ui/core";
 import Carrosel from "./components/Carrosel";
 import FirsSection from "./components/FirsSection";
 
+// informaçoes do redux
+import { Provider } from "react-redux";
+import store from "../src/redux/store";
+
 import "./App.css";
 
 const App = () => {
   return (
-    <Container maxWidth="xl">
-      <Router>
-        <Header />
-      </Router>
+    <Provider store={store}>
+      <Container maxWidth="xl">
+        <Router>
+          <Header />
+        </Router>
 
-      <Carrosel />
-      <FirsSection />
-    </Container>
+        <Carrosel />
+        <FirsSection />
+      </Container>
+    </Provider>
   );
 };
 

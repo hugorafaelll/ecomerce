@@ -1,17 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
-
 const cartSlice = createSlice({
-  //todo metodo qe vai detro do slice que faz o toolkit mais facil
   name: "cart",
 
-  initialState,
+  initialState: [],
 
   reducers: {
     add(state, action) {
-      // o que vai dentro do redux
-
       state.push(action.payload);
     },
 
